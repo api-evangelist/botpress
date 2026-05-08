@@ -3,7 +3,10 @@ url: https://raw.githubusercontent.com/api-evangelist/botpress/refs/heads/main/a
 name: Botpress
 x-type: company
 description: >-
-  Botpress is an open-source conversational AI platform for building, deploying, and managing chatbots with a visual flow editor and cloud hosting.
+  Botpress is an open-source conversational AI platform for building, deploying, and
+  managing chatbots with a visual flow editor and cloud hosting. Botpress Cloud exposes a
+  REST API plus a Chat API for sending messages to deployed bots. Self-hosted Botpress
+  remains open-source.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - AI
@@ -11,13 +14,53 @@ tags:
   - Chat
   - Open Source
   - Bot Builder
+  - LLM
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
-apis: []
+apis:
+  - aid: botpress:cloud-management
+    name: Botpress Cloud Management API
+    description: >-
+      REST API for managing bots, integrations, conversations, users, and analytics on
+      Botpress Cloud. Authentication via personal access tokens or workspace API keys.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://botpress.com/docs
+    baseURL: https://api.botpress.cloud
+    tags:
+      - Cloud
+      - Bots
+      - Integrations
+      - Workspaces
+    properties:
+      - type: Documentation
+        url: https://botpress.com/docs
+      - type: SignUp
+        url: https://app.botpress.cloud/
+      - type: Pricing
+        url: https://botpress.com/pricing
+  - aid: botpress:chat
+    name: Botpress Chat API
+    description: >-
+      Webhook-based REST API for sending and receiving chat messages with deployed Botpress
+      bots. Endpoint pattern is https://chat.botpress.cloud/{webhookUrl}/messages.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://botpress.com/docs
+    baseURL: https://chat.botpress.cloud
+    tags:
+      - Chat
+      - Webhooks
+      - Messaging
+    properties:
+      - type: Documentation
+        url: https://botpress.com/docs
 common:
   - type: Website
     url: https://botpress.com/
+  - type: Documentation
+    url: https://botpress.com/docs
+  - type: GitHub
+    url: https://github.com/botpress/botpress
   - type: Plans
     url: plans/botpress-plans-pricing.yml
   - type: RateLimits

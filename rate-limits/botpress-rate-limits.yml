@@ -5,7 +5,7 @@ provider: Botpress
 providerId: botpress
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - AI
 - Conversational
@@ -15,21 +15,50 @@ tags:
 - Rate Limiting
 - Quotas
 - Throttling
-description: Placeholder rate-limit artifact for Botpress. Replace with real limits once researched.
-notes: Initial scaffold — limits have not yet been reconciled.
+description: >-
+  Botpress Cloud limits incoming messages per plan tier (500/mo PAYG, 50,000/mo Team) and
+  vector storage (100MB PAYG, 2GB Team). Per-RPS HTTP limits are not publicly documented;
+  AI Spend is metered separately. Self-hosted Botpress has no Botpress-imposed limits.
+notes: Plan-tier message and storage caps are the documented scaling levers.
 sources:
-- https://botpress.com/
+- https://botpress.com/pricing
+- https://botpress.com/docs
 responseCodes:
   throttled: 429
 limits:
-- name: Default
+- name: Incoming Messages (Pay-as-you-go)
   scope: account
-  metric: varies
-  limit: see provider documentation
-  notes: Pending reconciliation.
+  metric: messages_per_month
+  limit: 500
+- name: Incoming Messages (Team)
+  scope: account
+  metric: messages_per_month
+  limit: 50000
+- name: Vector Storage (Pay-as-you-go)
+  scope: account
+  metric: megabytes
+  limit: 100
+- name: Vector Storage (Team)
+  scope: account
+  metric: gigabytes
+  limit: 2
+- name: Seats (Pay-as-you-go)
+  scope: account
+  metric: seats
+  limit: 1
+- name: Seats (Team)
+  scope: account
+  metric: seats
+  limit: 3
+- name: HTTP Requests
+  scope: account
+  metric: requests
+  limit: not publicly documented
 policies:
 - name: Backoff Strategy
   description: Clients should implement exponential backoff with jitter and honor any Retry-After header.
+- name: Plan Sizing
+  description: Move to Plus / Team / Managed tiers as monthly message volume grows past plan caps.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

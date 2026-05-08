@@ -5,20 +5,26 @@ provider: Botpress
 providerId: botpress
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - AI
 - Conversational
 - Chat
 - Open Source
 - Bot Builder
+- LLM
 - FinOps
 - Cost Management
 - FOCUS
-description: FOCUS-aligned FinOps placeholder for Botpress. Pipeline will replace with real billing details.
-notes: Initial scaffold — billing model has not yet been reconciled.
+description: >-
+  FOCUS-aligned FinOps view of Botpress Cloud. Billing combines a base plan fee per tier
+  with separate AI Spend (LLM token cost) drawn down from a $5/month credit on
+  Pay-as-you-go and pass-through on paid tiers. Vector storage and seats are tier-gated.
+  Self-hosted Botpress costs only your infra plus LLM bills.
+notes: AI Spend is the variable cost; rightsize agent flow design and chosen LLM model to control burn.
 sources:
-- https://botpress.com/
+- https://botpress.com/pricing
+- https://botpress.com/docs
 - https://focus.finops.org/focus-specification/v1-3/
 alignedWith:
   framework: FinOps Foundation Framework
@@ -29,38 +35,65 @@ alignedWith:
 publisherName: Botpress
 serviceCategory: AI
 billingModel:
-  pricingCategory: To Be Reconciled
+  pricingCategory: Subscription + AI Spend Pass-Through
   billingFrequency: Monthly
   billingCurrency: USD
   chargeCategories:
-  - Usage
   - Purchase
+  - Usage
   - Adjustment
 focusColumns:
-  ServiceName: Botpress
+  ServiceName: Botpress Cloud
   ServiceCategory: AI
   ProviderName: Botpress
   PublisherName: Botpress
   InvoiceIssuerName: Botpress
   BillingCurrency: USD
-  ChargeCategory: Usage
+  ChargeCategory: Purchase
 meters:
-- name: api_usage
-  description: Catch-all meter pending reconciliation.
-  unit: varies
+- name: plan_fee
+  description: Monthly plan subscription fee.
+  unit: month
   aggregation: sum
   dimensions:
   - account
-  - resource
+  - plan
+- name: incoming_messages
+  description: Incoming messages handled per month.
+  unit: message
+  aggregation: sum
+  dimensions:
+  - account
+  - bot
+- name: ai_spend
+  description: LLM token spend (provider pass-through).
+  unit: USD
+  aggregation: sum
+  dimensions:
+  - account
+  - model
+- name: vector_storage
+  description: Vector DB storage size.
+  unit: gigabytes
+  aggregation: max
+  dimensions:
+  - account
+- name: seats
+  description: Workspace collaborator seats.
+  unit: seat-month
+  aggregation: max
+  dimensions:
+  - account
+  - plan
 principles:
 - name: Visibility
-  description: Pull provider invoices or usage exports until a self-serve usage feed is documented.
+  description: Track plan fee, incoming messages, AI Spend, and vector storage in Botpress workspace dashboard.
 - name: Allocation
-  description: Tag invoice line items to consuming business units in your FinOps store.
+  description: Tag bots to consuming line of business / customer.
 - name: Optimization
-  description: Levers depend on the provider's billing model; review at renewal once reconciled.
+  description: Reduce AI Spend by selecting cheaper models for non-critical flows and pre-computing answers via vector DB.
 - name: Accountability
-  description: Assign a contract owner to review billing against negotiated terms.
+  description: Assign owners for plan fee and AI Spend separately; PAYG tier offers $5 AI credit/month.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

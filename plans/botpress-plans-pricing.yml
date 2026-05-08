@@ -5,37 +5,144 @@ provider: Botpress
 providerId: botpress
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - AI
 - Conversational
 - Chat
 - Open Source
 - Bot Builder
+- LLM
 - Plans
-description: Placeholder plans/pricing artifact for Botpress. Replace with real published pricing once
-  the pipeline researches the provider's plans page.
-notes: Initial scaffold — plans/pricing have not yet been reconciled.
+description: >-
+  Botpress Cloud has five plan tiers (Pay-as-you-go, Plus, Team, Managed, Enterprise) plus
+  the open-source self-hosted option. Most plans include a base subscription fee plus AI
+  Spend (LLM usage). Pay-as-you-go is free with a $5/month AI credit. Team is $495/month
+  with 50K incoming messages, 3 seats, 2GB vector storage. Enterprise typically starts
+  ~$2,000/month on multi-year terms.
+notes: Reconciled from Botpress public pricing page (May 2026).
 sources:
-- https://botpress.com/
+- https://botpress.com/pricing
 plans:
-- id: botpress-default
-  name: To Be Reconciled
-  type: enterprise
-  description: Initial scaffold; replace with provider plan tiers once pricing is reconciled.
+- id: botpress-payg
+  name: Pay-as-you-go
+  type: free
+  description: $0/month base, $5/month AI credit, 500 incoming messages, 1 seat, 100MB vector storage. Pay AI Spend for LLM usage above credit.
   entries:
-  - label: API Access
-    name: api_access
+  - label: Plan Fee
+    name: plan_fee
     type: flat
-    metric: varies
-    limit: -1
-    timeFrame: usage
+    metric: month
+    limit: 1
+    timeFrame: month
     geo: global
     unit: 1
-    price: see https://botpress.com/
+    price: 0 USD/month
+    userMultiplied: false
+  - label: Monthly AI Credit
+    name: ai_credit
+    type: flat
+    metric: month
+    limit: 1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 5 USD/month included
     userMultiplied: false
   elements:
-  - name: Pending Reconciliation
+  - name: 500 incoming messages/month
+  - name: 1 seat
+  - name: 100MB vector storage
+- id: botpress-plus
+  name: Plus
+  type: subscription
+  description: $89/month with increased usage limits.
+  entries:
+  - label: Plan Fee
+    name: plan_fee
+    type: flat
+    metric: month
+    limit: 1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 89 USD/month
+    userMultiplied: false
+- id: botpress-team
+  name: Team
+  type: subscription
+  description: $495/month + AI Spend, 3 seats, 2GB Vector DB, RBAC, real-time studio collab, custom analytics, 50,000 incoming messages.
+  entries:
+  - label: Plan Fee
+    name: plan_fee
+    type: flat
+    metric: month
+    limit: 1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 495 USD/month
+    userMultiplied: false
+  - label: Incoming Messages
+    name: incoming_messages
+    type: per_unit
+    metric: message
+    limit: 50000
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: included
+    userMultiplied: false
+  elements:
+  - name: 3 collaborator seats
+  - name: 2GB Vector DB
+  - name: RBAC
+  - name: Real-time Studio collaboration
+- id: botpress-managed
+  name: Managed
+  type: subscription
+  description: Hands-on managed deployment plan.
+  entries:
+  - label: Plan Fee
+    name: plan_fee
+    type: subscription
+    metric: month
+    limit: 1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: see botpress.com/pricing
+    userMultiplied: true
+- id: botpress-enterprise
+  name: Enterprise
+  type: enterprise
+  description: Custom enterprise contracts (typically starting around $2,000/month on multi-year terms).
+  entries:
+  - label: Enterprise Contract
+    name: enterprise
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: annual
+    geo: global
+    unit: 1
+    price: starting ~2000 USD/month (contact sales)
+    userMultiplied: false
+- id: botpress-self-hosted
+  name: Self-Hosted (Open Source)
+  type: free
+  description: Open-source Botpress; you pay your own hosting and LLM costs.
+  entries:
+  - label: Plan Fee
+    name: plan_fee
+    type: flat
+    metric: month
+    limit: 1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 0 USD (you pay infra and LLM)
+    userMultiplied: false
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
