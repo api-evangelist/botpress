@@ -1,0 +1,29 @@
+aid: botpress
+url: https://raw.githubusercontent.com/api-evangelist/botpress/refs/heads/main/apis.yml
+name: Botpress
+x-type: company
+description: >-
+  Botpress is an open-source conversational AI platform for building, deploying, and managing chatbots with a visual flow editor and cloud hosting.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - AI
+  - Conversational
+  - Chat
+  - Open Source
+  - Bot Builder
+created: '2026-05-08'
+modified: '2026-05-08'
+specificationVersion: '0.19'
+apis: []
+common:
+  - type: Website
+    url: https://botpress.com/
+  - type: Plans
+    url: plans/botpress-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/botpress-rate-limits.yml
+  - type: FinOps
+    url: finops/botpress-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
