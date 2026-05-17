@@ -1,7 +1,7 @@
 aid: botpress
 url: https://raw.githubusercontent.com/api-evangelist/botpress/refs/heads/main/apis.yml
 name: Botpress
-x-type: company
+kind: company
 description: >-
   Botpress is an open-source conversational AI platform for building, deploying, and
   managing chatbots with a visual flow editor and cloud hosting. Botpress Cloud exposes a
