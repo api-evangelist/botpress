@@ -69,6 +69,8 @@ common:
     url: rate-limits/botpress-rate-limits.yml
   - type: FinOps
     url: finops/botpress-finops.yml
+  - type: LLMsTxt
+    url: https://botpress.com/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
