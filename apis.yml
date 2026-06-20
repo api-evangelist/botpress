@@ -7,7 +7,7 @@ description: >-
   managing chatbots with a visual flow editor and cloud hosting. Botpress Cloud exposes a
   REST API plus a Chat API for sending messages to deployed bots. Self-hosted Botpress
   remains open-source.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - AI
   - Conversational
@@ -24,7 +24,7 @@ apis:
     description: >-
       REST API for managing bots, integrations, conversations, users, and analytics on
       Botpress Cloud. Authentication via personal access tokens or workspace API keys.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://botpress.com/docs
     baseURL: https://api.botpress.cloud
     tags:
@@ -44,7 +44,7 @@ apis:
     description: >-
       Webhook-based REST API for sending and receiving chat messages with deployed Botpress
       bots. Endpoint pattern is https://chat.botpress.cloud/{webhookUrl}/messages.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://botpress.com/docs
     baseURL: https://chat.botpress.cloud
     tags:
