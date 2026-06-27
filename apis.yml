@@ -35,7 +35,7 @@ apis:
     properties:
       - type: Documentation
         url: https://botpress.com/docs
-      - type: SignUp
+      - type: Signup
         url: https://app.botpress.cloud/
       - type: Pricing
         url: https://botpress.com/pricing
@@ -69,7 +69,7 @@ common:
     url: rate-limits/botpress-rate-limits.yml
   - type: FinOps
     url: finops/botpress-finops.yml
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://botpress.com/llms.txt
 maintainers:
   - FN: Kin Lane
