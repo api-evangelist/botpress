@@ -55,6 +55,12 @@ apis:
       - type: Documentation
         url: https://botpress.com/docs
 common:
+  - type: TrustCenter
+    url: security/botpress-trust-center.yml
+  - type: DomainSecurity
+    url: security/botpress-domain-security.yml
+  - type: Authentication
+    url: authentication/botpress-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/botpress
   - type: Website
