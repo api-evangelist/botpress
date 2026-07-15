@@ -55,6 +55,8 @@ apis:
       - type: Documentation
         url: https://botpress.com/docs
 common:
+  - type: AgenticAccess
+    url: agentic-access/botpress-agentic-access.yml
   - type: TrustCenter
     url: security/botpress-trust-center.yml
   - type: DomainSecurity
