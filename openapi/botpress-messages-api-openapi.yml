@@ -1,0 +1,82 @@
+openapi: 3.1.0
+info:
+  title: Botpress Cloud Admin Messages API
+  description: 'REST API for managing bots, conversations, messages, users, files, tables, and
+
+    workspaces on Botpress Cloud. Covers the Chat / Runtime, Files, Tables, and
+
+    Admin surfaces of the Botpress Cloud platform.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Botpress
+    url: https://botpress.com/docs
+servers:
+- url: https://api.botpress.com/v1
+  description: Botpress Cloud production
+security:
+- BearerAuth: []
+tags:
+- name: Messages
+paths:
+  /chat/messages:
+    get:
+      operationId: listMessages
+      summary: List messages
+      tags:
+      - Messages
+      responses:
+        '200':
+          description: Messages list
+    post:
+      operationId: createMessage
+      summary: Create a new message
+      tags:
+      - Messages
+      responses:
+        '201':
+          description: Message created
+    put:
+      operationId: updateMessages
+      summary: Update message tags and payload
+      tags:
+      - Messages
+      responses:
+        '200':
+          description: Updated
+  /chat/messages/{id}:
+    get:
+      operationId: getMessage
+      summary: Retrieve a message
+      tags:
+      - Messages
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Message
+    delete:
+      operationId: deleteMessage
+      summary: Delete a message
+      tags:
+      - Messages
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: Deleted
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: Personal access token or workspace API key passed as a Bearer token.

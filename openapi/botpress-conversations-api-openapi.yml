@@ -1,0 +1,83 @@
+openapi: 3.1.0
+info:
+  title: Botpress Cloud Admin Conversations API
+  description: 'REST API for managing bots, conversations, messages, users, files, tables, and
+
+    workspaces on Botpress Cloud. Covers the Chat / Runtime, Files, Tables, and
+
+    Admin surfaces of the Botpress Cloud platform.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Botpress
+    url: https://botpress.com/docs
+servers:
+- url: https://api.botpress.com/v1
+  description: Botpress Cloud production
+security:
+- BearerAuth: []
+tags:
+- name: Conversations
+paths:
+  /chat/conversations:
+    get:
+      operationId: listConversations
+      summary: List conversations
+      tags:
+      - Conversations
+      responses:
+        '200':
+          description: Conversations list
+    post:
+      operationId: createConversation
+      summary: Create a new conversation
+      tags:
+      - Conversations
+      responses:
+        '201':
+          description: Conversation created
+  /chat/conversations/{id}:
+    get:
+      operationId: getConversation
+      summary: Retrieve a conversation
+      tags:
+      - Conversations
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Conversation
+    delete:
+      operationId: deleteConversation
+      summary: Delete a conversation
+      tags:
+      - Conversations
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: Deleted
+  /chat/conversations/get-or-create:
+    post:
+      operationId: getOrCreateConversation
+      summary: Get or create a conversation
+      tags:
+      - Conversations
+      responses:
+        '200':
+          description: Conversation
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: Personal access token or workspace API key passed as a Bearer token.

@@ -1,0 +1,89 @@
+openapi: 3.1.0
+info:
+  title: Botpress Cloud Admin Tables API
+  description: 'REST API for managing bots, conversations, messages, users, files, tables, and
+
+    workspaces on Botpress Cloud. Covers the Chat / Runtime, Files, Tables, and
+
+    Admin surfaces of the Botpress Cloud platform.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Botpress
+    url: https://botpress.com/docs
+servers:
+- url: https://api.botpress.com/v1
+  description: Botpress Cloud production
+security:
+- BearerAuth: []
+tags:
+- name: Tables
+paths:
+  /tables:
+    get:
+      operationId: listTables
+      summary: List tables
+      tags:
+      - Tables
+      responses:
+        '200':
+          description: Tables list
+    post:
+      operationId: createTable
+      summary: Create a table
+      tags:
+      - Tables
+      responses:
+        '201':
+          description: Table created
+  /tables/{id}/rows:
+    post:
+      operationId: insertTableRows
+      summary: Insert table rows
+      tags:
+      - Tables
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Rows inserted
+    put:
+      operationId: updateTableRows
+      summary: Update table rows
+      tags:
+      - Tables
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Updated
+  /tables/{id}/rows/find:
+    post:
+      operationId: findTableRows
+      summary: Query table rows
+      tags:
+      - Tables
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Matching rows
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: Personal access token or workspace API key passed as a Bearer token.

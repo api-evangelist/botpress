@@ -1,0 +1,83 @@
+openapi: 3.1.0
+info:
+  title: Botpress Cloud Admin Files API
+  description: 'REST API for managing bots, conversations, messages, users, files, tables, and
+
+    workspaces on Botpress Cloud. Covers the Chat / Runtime, Files, Tables, and
+
+    Admin surfaces of the Botpress Cloud platform.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Botpress
+    url: https://botpress.com/docs
+servers:
+- url: https://api.botpress.com/v1
+  description: Botpress Cloud production
+security:
+- BearerAuth: []
+tags:
+- name: Files
+paths:
+  /files:
+    get:
+      operationId: listFiles
+      summary: List files
+      tags:
+      - Files
+      responses:
+        '200':
+          description: Files list
+    post:
+      operationId: upsertFiles
+      summary: Create or upsert files
+      tags:
+      - Files
+      responses:
+        '201':
+          description: Files upserted
+  /files/{id}:
+    get:
+      operationId: getFile
+      summary: Retrieve file details
+      tags:
+      - Files
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: File details
+    delete:
+      operationId: deleteFile
+      summary: Delete a file
+      tags:
+      - Files
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: Deleted
+  /files/search:
+    get:
+      operationId: searchFiles
+      summary: Search file contents
+      tags:
+      - Files
+      responses:
+        '200':
+          description: Matching files
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: Personal access token or workspace API key passed as a Bearer token.

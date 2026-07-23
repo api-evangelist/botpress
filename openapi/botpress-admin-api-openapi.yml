@@ -1,0 +1,91 @@
+openapi: 3.1.0
+info:
+  title: Botpress Cloud Admin API
+  description: 'REST API for managing bots, conversations, messages, users, files, tables, and
+
+    workspaces on Botpress Cloud. Covers the Chat / Runtime, Files, Tables, and
+
+    Admin surfaces of the Botpress Cloud platform.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Botpress
+    url: https://botpress.com/docs
+servers:
+- url: https://api.botpress.com/v1
+  description: Botpress Cloud production
+security:
+- BearerAuth: []
+tags:
+- name: Admin
+paths:
+  /admin/bots:
+    get:
+      operationId: listBots
+      summary: List bots
+      tags:
+      - Admin
+      responses:
+        '200':
+          description: Bots list
+    post:
+      operationId: createBot
+      summary: Create a bot
+      tags:
+      - Admin
+      responses:
+        '201':
+          description: Bot created
+  /admin/bots/{id}:
+    put:
+      operationId: updateBot
+      summary: Update a bot
+      tags:
+      - Admin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Updated
+    delete:
+      operationId: deleteBot
+      summary: Delete a bot
+      tags:
+      - Admin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: Deleted
+  /admin/workspaces:
+    get:
+      operationId: listWorkspaces
+      summary: List workspaces
+      tags:
+      - Admin
+      responses:
+        '200':
+          description: Workspaces list
+    post:
+      operationId: createWorkspace
+      summary: Create a workspace
+      tags:
+      - Admin
+      responses:
+        '201':
+          description: Workspace created
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: Personal access token or workspace API key passed as a Bearer token.
