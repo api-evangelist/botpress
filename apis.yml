@@ -7,7 +7,20 @@ description: >-
   managing chatbots with a visual flow editor and cloud hosting. Botpress Cloud exposes a
   REST API plus a Chat API for sending messages to deployed bots. Self-hosted Botpress
   remains open-source.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+    - plans
+    - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/botpress.png
 tags:
   - AI
   - Conversational
@@ -16,9 +29,84 @@ tags:
   - Bot Builder
   - LLM
 created: '2026-05-08'
-modified: '2026-05-08'
+modified: '2026-07-25'
 specificationVersion: '0.19'
 apis:
+  - aid: botpress:chat
+    name: Botpress Chat API
+    description: >-
+      Webhook-based REST API for sending and receiving chat messages with deployed Botpress bots. Endpoint
+      pattern is https://chat.botpress.cloud/{webhookUrl}/messages.
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+    humanURL: https://botpress.com/docs
+    baseURL: https://chat.botpress.cloud
+    tags:
+      - Chat
+      - Webhooks
+      - Messaging
+    properties:
+      - type: Documentation
+        url: https://botpress.com/docs
+  - aid: botpress:botpress-admin-api
+    name: Botpress Admin API
+    description: The Admin API from Botpress — 3 operation(s) for admin.
+    humanURL: https://botpress.com/docs
+    baseURL: https://api.botpress.cloud
+    tags:
+      - Admin
+    properties:
+      - type: OpenAPI
+        url: openapi/botpress-admin-api-openapi.yml
+  - aid: botpress:botpress-conversations-api
+    name: Botpress Conversations API
+    description: The Conversations API from Botpress — 3 operation(s) for conversations.
+    humanURL: https://botpress.com/docs
+    baseURL: https://api.botpress.cloud
+    tags:
+      - Conversations
+    properties:
+      - type: OpenAPI
+        url: openapi/botpress-conversations-api-openapi.yml
+  - aid: botpress:botpress-files-api
+    name: Botpress Files API
+    description: The Files API from Botpress — 3 operation(s) for files.
+    humanURL: https://botpress.com/docs
+    baseURL: https://api.botpress.cloud
+    tags:
+      - Files
+    properties:
+      - type: OpenAPI
+        url: openapi/botpress-files-api-openapi.yml
+  - aid: botpress:botpress-messages-api
+    name: Botpress Messages API
+    description: The Messages API from Botpress — 2 operation(s) for messages.
+    humanURL: https://botpress.com/docs
+    baseURL: https://api.botpress.cloud
+    tags:
+      - Messages
+    properties:
+      - type: OpenAPI
+        url: openapi/botpress-messages-api-openapi.yml
+  - aid: botpress:botpress-tables-api
+    name: Botpress Tables API
+    description: The Tables API from Botpress — 3 operation(s) for tables.
+    humanURL: https://botpress.com/docs
+    baseURL: https://api.botpress.cloud
+    tags:
+      - Tables
+    properties:
+      - type: OpenAPI
+        url: openapi/botpress-tables-api-openapi.yml
+  - aid: botpress:botpress-users-api
+    name: Botpress Users API
+    description: The Users API from Botpress — 2 operation(s) for users.
+    humanURL: https://botpress.com/docs
+    baseURL: https://api.botpress.cloud
+    tags:
+      - Users
+    properties:
+      - type: OpenAPI
+        url: openapi/botpress-users-api-openapi.yml
   - aid: botpress:cloud-management
     name: Botpress Cloud Management API
     description: >-
@@ -39,21 +127,6 @@ apis:
         url: https://app.botpress.cloud/
       - type: Pricing
         url: https://botpress.com/pricing
-  - aid: botpress:chat
-    name: Botpress Chat API
-    description: >-
-      Webhook-based REST API for sending and receiving chat messages with deployed Botpress
-      bots. Endpoint pattern is https://chat.botpress.cloud/{webhookUrl}/messages.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://botpress.com/docs
-    baseURL: https://chat.botpress.cloud
-    tags:
-      - Chat
-      - Webhooks
-      - Messaging
-    properties:
-      - type: Documentation
-        url: https://botpress.com/docs
 common:
   - type: AgenticAccess
     url: agentic-access/botpress-agentic-access.yml
