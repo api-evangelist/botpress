@@ -1,0 +1,24 @@
+{
+  "provider": "botpress",
+  "sources": [
+    "botpress-admin-api-openapi.yml",
+    "botpress-conversations-api-openapi.yml",
+    "botpress-files-api-openapi.yml",
+    "botpress-messages-api-openapi.yml",
+    "botpress-tables-api-openapi.yml",
+    "botpress-users-api-openapi.yml"
+  ],
+  "outputs": [
+    "botpress-admin-api-openapi.yml",
+    "botpress-conversations-api-openapi.yml",
+    "botpress-files-api-openapi.yml",
+    "botpress-messages-api-openapi.yml",
+    "botpress-tables-api-openapi.yml",
+    "botpress-users-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
