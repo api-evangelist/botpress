@@ -1,0 +1,92 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww38200\viewh19980\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs48 \cf0 # Botpress\
+> The modern platform for building and managing AI agents.\
+\
+Botpress is a full-stack platform for creating, deploying, and managing AI agents powered by large language models (LLMs). It combines a visual builder, real-time orchestration, and safety systems so teams can automate conversations, workflows, and integrations without losing control or visibility.  \
+Botpress is used by developers, startups, and enterprises to turn AI capabilities into production-ready agents that communicate, take actions, and make decisions.\
+\
+## Overview\
+- [Homepage](https://botpress.com): High-level introduction to the Botpress platform, outlining how AI agents can be built, deployed, and scaled.\
+- [AI Agent Studio](https://www.botpress.com/features/ai-agent-studio): Visual builder for workflows, prompts, and agent logic.\
+- [Autonomous](https://www.botpress.com/features/autonomous): Agent decisioning and tool-use for multi-step tasks and outcomes.\
+- [Knowledge Bases](https://www.botpress.com/features/knowledge-bases): Retrieval-augmented generation using embeddings and managed sources.\
+- [Human Handoff](https://www.botpress.com/features/human-handoff): Escalate to human agents with full conversation context and controls.\
+- [Tables](https://www.botpress.com/features/tables): Built-in structured storage for agent state and operational data.\
+- [Pricing](https://botpress.com/pricing): Overview of the available plans, including free and paid tiers, designed for different levels of scale and usage.\
+- [Blog](https://botpress.com/blog): In-depth writing on AI agents, LLM orchestration, retrieval-augmented generation (RAG), and real-world implementation examples.\
+\
+## Build\
+> Botpress Studio is where AI agents are built and configured.\
+\
+Studio lets teams design workflows visually while blending natural language logic and structured automation. Each agent can use different LLMs, knowledge bases, and personality traits.\
+\
+- [Botpress Studio](https://botpress.com/features/ai-agent-studio): Core building environment that unifies prompt design, workflow creation, and conversational logic.\
+- [Cards](https://botpress.com/hub): Downloadable, prebuilt workflows, tools, and integrations that extend agent capabilities instantly.\
+- [Integrations](https://botpress.com/integrations): Connect Botpress to external systems like CRMs, databases, or messaging platforms through APIs and official connectors.\
+- [Knowledge Base](https://www.botpress.com/docs/learn/reference/knowledge-base/introduction): Guides on uploading and structuring data for retrieval-augmented generation (RAG).\
+- [Personality Agent](https://www.botpress.com/docs/learn/reference/agents/personality-agent): Controls the voice, tone, and behavior of each AI agent to match a brand or persona.\
+- [Custom Actions](https://www.botpress.com/docs/learn/reference/actions): Allow developers to embed reusable JavaScript logic within agent workflows for advanced automation.\
+\
+## Deploy\
+> Deployment options allow agents to run wherever conversations happen.\
+\
+Botpress provides a fully hosted cloud infrastructure and multiple ways to interact with users \'97 from web widgets to integrations with popular chat platforms.\
+\
+- [Webchat](https://www.botpress.com/docs/webchat/get-started/introduction): Embeddable chat interface that can be styled and customized for websites or apps.\
+- [Channels](https://www.botpress.com/docs/for-developers/sdk/integration/concepts#channels): Connect agents to WhatsApp, Slack, Messenger, and other messaging apps.\
+\
+## Monitor\
+> Botpress provides real-time visibility into how agents perform and interact with users.\
+\
+Monitoring ensures that AI agents stay effective, accurate, and safe over time, with tools to analyze, debug, and supervise live conversations.\
+\
+- [Analytics](https://www.botpress.com/docs/learn/get-started/dashboard/bot/analytics#tracking-custom-events): Track agent performance, user engagement, and conversation quality.\
+- [Human Handoff (HITL)](https://www.botpress.com/docs/integrations/integration-guides/hitl#human-in-the-loop-hitl): Enables human agents to review or take over live conversations for oversight.\
+- [Policy Agent](https://www.botpress.com/docs/learn/reference/agents/policy-agent): Enforces constraints and safety rules to prevent hallucinations or unsafe responses.\
+\
+## Developers\
+> Developers extend Botpress using APIs, SDKs, and custom code.\
+\
+Botpress exposes a flexible framework for extending capabilities through scripts, custom actions, and API endpoints.\
+\
+- [API Reference](https://botpress.com/docs/api-reference): Documentation for programmatic access to Botpress services and agent management.\
+- [JavaScript SDK](https://www.botpress.com/docs/for-developers/sdk/overview): SDK for integrating Botpress agents directly into custom applications or backend systems.\
+- [Custom Actions](https://www.botpress.com/docs/learn/reference/actions): Step-by-step guide to create reusable logic for workflow automation.\
+\
+## Security and Governance\
+> Control and transparency are built into the platform.\
+\
+Botpress is designed for organizations that need to maintain trust, data security, and brand safety while working with LLMs.\
+\
+- [Data Privacy](https://botpress.com/trust): Outlines how Botpress handles user data, storage, and compliance.\
+- [Brand Safety](https://www.botpress.com/docs/learn/guides/advanced/safety/brand-safety-framework): Explains governance layers, content review systems, and human oversight.\
+\
+## Use Cases\
+> Practical examples of what teams build with Botpress.\
+\
+Botpress agents can power customer-facing chatbots, internal tools, or LLM-driven assistants that perform tasks across systems.\
+\
+- [Customer Support Automation](https://botpress.com/use-cases/customer-support): Automates repetitive support workflows and ticket triage.\
+- [Sales Assistants](https://botpress.com/use-cases/sales): Conversational agents that qualify leads, answer product questions, and assist buyers in real time.\
+- [Internal Tools](https://botpress.com/use-cases/internal-tools): Agents that connect to CRMs, ERPs, or APIs to execute business workflows automatically.\
+\
+## Learn\
+> Educational resources for learning the Botpress platform.\
+\
+- [Documentation](https://botpress.com/docs): Complete reference covering setup, building, and deployment.\
+- [Academy](https://botpress.com/academy): Structured courses to help users and developers master AI agent design.\
+- [YouTube Tutorials](https://www.youtube.com/@botpress): Visual guides and tutorials demonstrating workflows, agents, and platform features.\
+\
+## Company\
+> Information about Botpress as an organization.\
+\
+- [About](https://botpress.com/about): Company background, mission, and vision for AI orchestration.\
+- [Careers](https://botpress.com/careers): Open positions and hiring details.\
+- [Contact](https://botpress.com/contact-us): Channels for reaching the Botpress team.\
+}

@@ -1,0 +1,93 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Botpress Cloud Admin Messages API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Messages",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.botpress.com/v1/chat/messages"
+          },
+          "docs": "List messages"
+        },
+        {
+          "info": {
+            "name": "Create a new message",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.botpress.com/v1/chat/messages"
+          },
+          "docs": "Create a new message"
+        },
+        {
+          "info": {
+            "name": "Update message tags and payload",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.botpress.com/v1/chat/messages"
+          },
+          "docs": "Update message tags and payload"
+        },
+        {
+          "info": {
+            "name": "Retrieve a message",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.botpress.com/v1/chat/messages/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a message"
+        },
+        {
+          "info": {
+            "name": "Delete a message",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.botpress.com/v1/chat/messages/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a message"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

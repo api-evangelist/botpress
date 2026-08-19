@@ -1,0 +1,100 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Botpress Cloud Admin Tables API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tables",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List tables",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.botpress.com/v1/tables"
+          },
+          "docs": "List tables"
+        },
+        {
+          "info": {
+            "name": "Create a table",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.botpress.com/v1/tables"
+          },
+          "docs": "Create a table"
+        },
+        {
+          "info": {
+            "name": "Insert table rows",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.botpress.com/v1/tables/:id/rows",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Insert table rows"
+        },
+        {
+          "info": {
+            "name": "Update table rows",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.botpress.com/v1/tables/:id/rows",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update table rows"
+        },
+        {
+          "info": {
+            "name": "Query table rows",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.botpress.com/v1/tables/:id/rows/find",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Query table rows"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

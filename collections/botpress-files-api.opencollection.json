@@ -1,0 +1,93 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Botpress Cloud Admin Files API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Files",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List files",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.botpress.com/v1/files"
+          },
+          "docs": "List files"
+        },
+        {
+          "info": {
+            "name": "Create or upsert files",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.botpress.com/v1/files"
+          },
+          "docs": "Create or upsert files"
+        },
+        {
+          "info": {
+            "name": "Retrieve file details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.botpress.com/v1/files/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve file details"
+        },
+        {
+          "info": {
+            "name": "Delete a file",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.botpress.com/v1/files/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a file"
+        },
+        {
+          "info": {
+            "name": "Search file contents",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.botpress.com/v1/files/search"
+          },
+          "docs": "Search file contents"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

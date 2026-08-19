@@ -1,0 +1,104 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Botpress Cloud Admin API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Admin",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List bots",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.botpress.com/v1/admin/bots"
+          },
+          "docs": "List bots"
+        },
+        {
+          "info": {
+            "name": "Create a bot",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.botpress.com/v1/admin/bots"
+          },
+          "docs": "Create a bot"
+        },
+        {
+          "info": {
+            "name": "Update a bot",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.botpress.com/v1/admin/bots/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update a bot"
+        },
+        {
+          "info": {
+            "name": "Delete a bot",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.botpress.com/v1/admin/bots/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a bot"
+        },
+        {
+          "info": {
+            "name": "List workspaces",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.botpress.com/v1/admin/workspaces"
+          },
+          "docs": "List workspaces"
+        },
+        {
+          "info": {
+            "name": "Create a workspace",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.botpress.com/v1/admin/workspaces"
+          },
+          "docs": "Create a workspace"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
