@@ -22,6 +22,13 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/botpress.png
 tags:
+  - Artificial Intelligence
+  - Conversational
+  - Chat
+  - Open-Source
+  - Bot Builder
+  - LLM
+tags_raw:
   - AI
   - Conversational
   - Chat
@@ -41,6 +48,10 @@ apis:
     humanURL: https://botpress.com/docs
     baseURL: https://chat.botpress.cloud
     tags:
+      - Chat
+      - Webhook
+      - Messaging
+    tags_raw:
       - Chat
       - Webhooks
       - Messaging
@@ -73,6 +84,8 @@ apis:
     humanURL: https://botpress.com/docs
     baseURL: https://api.botpress.cloud
     tags:
+      - File
+    tags_raw:
       - Files
     properties:
       - type: OpenAPI
@@ -83,6 +96,8 @@ apis:
     humanURL: https://botpress.com/docs
     baseURL: https://api.botpress.cloud
     tags:
+      - Message
+    tags_raw:
       - Messages
     properties:
       - type: OpenAPI
@@ -103,6 +118,8 @@ apis:
     humanURL: https://botpress.com/docs
     baseURL: https://api.botpress.cloud
     tags:
+      - User
+    tags_raw:
       - Users
     properties:
       - type: OpenAPI
@@ -116,6 +133,11 @@ apis:
     humanURL: https://botpress.com/docs
     baseURL: https://api.botpress.cloud
     tags:
+      - Cloud
+      - Bots
+      - Integration
+      - Workspaces
+    tags_raw:
       - Cloud
       - Bots
       - Integrations
