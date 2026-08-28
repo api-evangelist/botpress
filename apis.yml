@@ -7,6 +7,18 @@ description: >-
   managing chatbots with a visual flow editor and cloud hosting. Botpress Cloud exposes a
   REST API plus a Chat API for sending messages to deployed bots. Self-hosted Botpress
   remains open-source.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
