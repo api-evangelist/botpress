@@ -149,7 +149,7 @@ apis:
       - Cloud
       - Bots
       - Integration
-      - Workspaces
+      - Workspace
     tags_raw:
       - Cloud
       - Bots
