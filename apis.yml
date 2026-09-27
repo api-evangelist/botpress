@@ -8,16 +8,22 @@ description: >-
   REST API plus a Chat API for sending messages to deployed bots. Self-hosted Botpress
   remains open-source.
 deliveryModel:
-  model: saas
-  open_source: false
+  model: open-core
+  license: MIT
+  license_evidence:
+    repo: botpress/botpress
+    spdx: MIT
+    stars: 14923
+  open_source: true
   commercial: true
   callable_host: false
-  label: Hosted service · you call their endpoint
+  label: Open core · an OSS project plus a commercial hosted product
   confidence: medium
   source:
   - openapi
   - pricing
-  generated: '2026-08-28'
+  - repository-license
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: freemium
@@ -36,9 +42,9 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/botpress.png
 tags:
   - Artificial Intelligence
-  - Conversational
+  - Conversational AI
   - Chat
-  - Open-Source
+  - Open Source
   - Bot Builder
   - LLM
 tags_raw:
@@ -48,6 +54,7 @@ tags_raw:
   - Open Source
   - Bot Builder
   - LLM
+  - Open-Source
 created: '2026-05-08'
 modified: '2026-07-25'
 specificationVersion: '0.23'
