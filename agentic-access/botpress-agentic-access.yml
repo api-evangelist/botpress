@@ -1,19 +1,105 @@
-generated: '2026-07-15'
+generated: '2026-09-23'
 method: generated
-source: openapi/botpress-openapi.yml
+source: openapi/botpress-admin-api-openapi.yml, openapi/botpress-conversations-api-openapi.yml,
+  openapi/botpress-files-api-openapi.yml, openapi/botpress-messages-api-openapi.yml, openapi/botpress-tables-api-openapi.yml,
+  openapi/botpress-users-api-openapi.yml
 description: Recommended x-agentic-access execution contracts, classified heuristically from
   the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
   audience per deployment. See research/curity/agentic-governance/.
 summary:
   operations: 31
   by_action_class:
-    connected: 12
-    acting: 19
+    connected: 13
+    acting: 18
   by_consequence:
-    read: 12
-    write: 19
+    read: 13
+    write: 18
   human_in_the_loop_required: 0
 operations:
+- path: /admin/bots
+  method: get
+  operationId: listBots
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /admin/bots
+  method: post
+  operationId: createBot
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /admin/bots/{id}
+  method: put
+  operationId: updateBot
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /admin/bots/{id}
+  method: delete
+  operationId: deleteBot
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /admin/workspaces
+  method: get
+  operationId: listWorkspaces
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /admin/workspaces
+  method: post
+  operationId: createWorkspace
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
 - path: /chat/conversations
   method: get
   operationId: listConversations
@@ -69,142 +155,6 @@ operations:
 - path: /chat/conversations/get-or-create
   method: post
   operationId: getOrCreateConversation
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /chat/messages
-  method: get
-  operationId: listMessages
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /chat/messages
-  method: post
-  operationId: createMessage
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /chat/messages
-  method: put
-  operationId: updateMessages
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /chat/messages/{id}
-  method: get
-  operationId: getMessage
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /chat/messages/{id}
-  method: delete
-  operationId: deleteMessage
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /chat/users
-  method: get
-  operationId: listUsers
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /chat/users
-  method: post
-  operationId: createUser
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /chat/users/{id}
-  method: get
-  operationId: getUser
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /chat/users/{id}
-  method: put
-  operationId: updateUser
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /chat/users/{id}
-  method: delete
-  operationId: deleteUser
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -280,6 +230,74 @@ operations:
     token:
       max-ttl: 3600
     audit: none
+- path: /chat/messages
+  method: get
+  operationId: listMessages
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /chat/messages
+  method: post
+  operationId: createMessage
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /chat/messages
+  method: put
+  operationId: updateMessages
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /chat/messages/{id}
+  method: get
+  operationId: getMessage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /chat/messages/{id}
+  method: delete
+  operationId: deleteMessage
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
 - path: /tables
   method: get
   operationId: listTables
@@ -342,21 +360,15 @@ operations:
   method: post
   operationId: findTableRows
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /admin/bots
+      max-ttl: 3600
+    audit: none
+- path: /chat/users
   method: get
-  operationId: listBots
+  operationId: listUsers
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -364,9 +376,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /admin/bots
+- path: /chat/users
   method: post
-  operationId: createBot
+  operationId: createUser
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -380,9 +392,19 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /admin/bots/{id}
+- path: /chat/users/{id}
+  method: get
+  operationId: getUser
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /chat/users/{id}
   method: put
-  operationId: updateBot
+  operationId: updateUser
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -396,35 +418,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /admin/bots/{id}
+- path: /chat/users/{id}
   method: delete
-  operationId: deleteBot
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /admin/workspaces
-  method: get
-  operationId: listWorkspaces
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /admin/workspaces
-  method: post
-  operationId: createWorkspace
+  operationId: deleteUser
   x-agentic-access:
     action-class: acting
     consequence: write
